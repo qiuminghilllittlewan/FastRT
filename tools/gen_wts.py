@@ -9,13 +9,13 @@ sys.path.append('.')
 import torch
 import torchvision
 #from torchsummary import summary
-sys.path.insert(1, '/home/user/project_ws/src/reid_ros/scripts/fast-reid')
+# sys.path.insert(1, '/home/user/project_ws/src/reid_ros/scripts/fast-reid')
 from fastreid.config import get_cfg
 from fastreid.modeling.meta_arch import build_model
 from fastreid.utils.checkpoint import Checkpointer
 
-sys.path.append('/home/user/project_ws/src/reid_ros/scripts/fast-reid/projects/FastDistill')
-from fastdistill import *
+
+# from fastdistill import *
 
 def setup_cfg(args):
     # load confiimport argparseg from file and command-line arguments
@@ -82,24 +82,24 @@ if __name__ == '__main__':
     cfg = setup_cfg(args)
     cfg.MODEL.BACKBONE.PRETRAIN = False
     print("[Config]: \n", cfg)
-    
+
     model = build_model(cfg)
-    
+
     if args.show_model:
         print('[Model]: \n', model)
         #summary(model, (3, cfg.INPUT.SIZE_TEST[0], cfg.INPUT.SIZE_TEST[1]))
-    
+
     print("Load model from: ", cfg.MODEL.WEIGHTS)
     Checkpointer(model).load(cfg.MODEL.WEIGHTS)
-    
+
     model = model.to(cfg.MODEL.DEVICE)
     model.eval()
-    
+
     if args.verify:
         input = torch.ones(1, 3, cfg.INPUT.SIZE_TEST[0], cfg.INPUT.SIZE_TEST[1]).to(cfg.MODEL.DEVICE)
         out = model(input).view(-1).cpu().detach().numpy()
-        print('[Model output]: \n', out) 
-        
+        print('[Model output]: \n', out)
+
     if args.benchmark:
         start_time = time.time()
         input = torch.ones(1, 3, cfg.INPUT.SIZE_TEST[0], cfg.INPUT.SIZE_TEST[1]).to(cfg.MODEL.DEVICE)
