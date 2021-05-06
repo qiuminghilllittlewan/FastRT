@@ -17,7 +17,7 @@ namespace py = pybind11;
 static const std::string WEIGHTS_PATH = "../bot_R50.wts";
 static const std::string ENGINE_PATH = "./bot_R50.engine";
 
-static const int MAX_BATCH_SIZE = 16;
+static const int MAX_BATCH_SIZE = 32;
 static const int INPUT_H = 256;
 static const int INPUT_W = 128;
 static const int OUTPUT_SIZE = 2048;
