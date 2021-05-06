@@ -27,7 +27,7 @@ static const FastreidBackboneType BACKBONE = FastreidBackboneType::r50;
 static const FastreidHeadType HEAD = FastreidHeadType::EmbeddingHead;
 static const FastreidPoolingType HEAD_POOLING = FastreidPoolingType::avgpool;
 static const int LAST_STRIDE = 1;
-static const bool WITH_IBNA = false;
+static const bool WITH_IBNA = true;
 static const bool WITH_NL = false;
 static const int EMBEDDING_DIM = 0; 
 
