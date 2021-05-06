@@ -12,10 +12,10 @@ using namespace nvinfer1;
 #endif
 
 /* Ex1. sbs_R50-ibn */
-static const std::string WEIGHTS_PATH = "../veri_wild_bot_R50_ibn.wts";
-static const std::string ENGINE_PATH = "./veri_wild_bot_R50_ibn.engine";
+static const std::string WEIGHTS_PATH = "../bot_R50.wts";
+static const std::string ENGINE_PATH = "./bot_R50.engine";
 
-static const int MAX_BATCH_SIZE = 16;
+static const int MAX_BATCH_SIZE = 32;
 static const int INPUT_H = 256;
 static const int INPUT_W = 128;
 static const int OUTPUT_SIZE = 2048;
