@@ -7,6 +7,7 @@ INPUT:
 MODEL:
   BACKBONE:
     DEPTH: 34x
+    FEAT_DIM: 512
     WITH_IBN: True
 
   HEADS:
