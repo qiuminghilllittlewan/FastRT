@@ -3,6 +3,7 @@ _BASE_: ../Base-bagtricks.yml
 MODEL:
   BACKBONE:
     DEPTH: 34x
+    FEAT_DIM: 512
     WITH_IBN: True
 
 DATASETS:
