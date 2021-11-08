@@ -10,7 +10,11 @@ include_directories(/usr/include/x86_64-linux-gnu/)
 link_directories(/usr/lib/x86_64-linux-gnu/)
 
 include_directories(${SOLUTION_DIR}/include)
-add_executable(${APP_PROJECT_NAME} inference.cpp)
+if(BUILD_CLASS)
+  add_executable(${APP_PROJECT_NAME} inference.cpp)
+else()
+  add_executable(${APP_PROJECT_NAME} inference1.cpp)
+endif()
 
 # numpy
 if(USE_CNUMPY)
